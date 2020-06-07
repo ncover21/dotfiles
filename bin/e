@@ -1,0 +1,4 @@
+#!/bin/bash
+#shortcut to editor
+
+exec "$EDITOR" "${1:-.}"

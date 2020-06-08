@@ -1,3 +1,4 @@
+#!/bin/bash
 
 copy() {
     pbcopy < $1
@@ -16,4 +17,14 @@ rmd () {
 
 rpdf(){
     pandoc $1 --pdf-engine=xelatex -o $2
+}
+
+# `o` with no arguments opens the current directory, otherwise opens the given
+# location
+function o() {
+	if [ $# -eq 0 ]; then
+		open .;
+	else
+		open "$@";
+	fi;
 }

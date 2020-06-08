@@ -16,3 +16,8 @@ tags
 #Embedded Git Repos
 .vim/bundle
 .vim/plugged
+
+# vim_runtime 
+.vim_runtime/.git
+.vim_runtime/LICENSE
+

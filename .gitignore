@@ -1,10 +1,15 @@
 temp_dirs/undodir/*
-sources_non_forked/ack.vim/.netrwhist
-temp_dirs/yankring_history_v2.txt
-sources_forked/yankring/doc/tags
-sources_non_forked/tlib/doc/tags
-sources_non_forked/ctrlp.vim/doc/tags*
 my_plugins/
 my_configs.vim
 tags
 .DS_Store
+*.backup
+
+
+# Credentials
+.aws/credentials
+
+#other
+.docker/.buildNodeID
+.docker/application-template
+

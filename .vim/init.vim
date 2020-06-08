@@ -1,17 +1,31 @@
 
 
-source ./basic.vim
-source ./filetypes.vim
-source ./plugins_config.vim
-source ./extended.vim
+source $HOME/.vim/basic.vim
+source $HOME/.vim/filetypes.vim
+source $HOME/.vim/plugins_config.vim
+source $HOME/.vim/extended.vim
 
 :set number
 
+let mapleader=","
 
+map <space> /
+map <C-space> ?
+
+" Fast Saving
+nmap <S-w> :w!<cr>
+
+" copy and paste
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 call plug#begin('~/.vim/plugged')
 
+" Use release branch (recommend)
 Plug 'davidhalter/jedi-vim'
+" For markdown stuff
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/indentpython.vim'
@@ -39,14 +53,8 @@ set splitright
 
 " Window Creation Remapping
 map <C-d> <C-w>v
-map <C-s> <C-w>s
+map <leader>d <C-w>s
 map <C-q> <C-w>q
-
-" copy and paste
-vmap <C-c> "+yi
-vmap <C-x> "+c
-vmap <C-v> c<ESC>"+p
-imap <C-v> <ESC>"+pa
 
 " coc plugin
 nmap <leader>gd <Plug><coc-definition)
@@ -64,7 +72,44 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 let g:jedi#show_call_signatures = 0
 
 " source $MYVIMRC reloads the saved $MYVIMRC
-:nmap <Leader>s :source $MYVIMRC
+" :nmap <Leader>s :source $MYVIMRC
 
 " opens $MYVIMRC for editing, or use :tabedit $MYVIMRC
-:nmap <Leader>v :e $MYVIMRC
+" :nmap <Leader>v :e $MYVIMRC
+
+" quick spelling correction
+imap <c-x> <c-g>u<Esc>[s1z=`]a<c-g>u
+nmap <c-x> [s1z=<c-o>
+
+" Shift tab
+" for command mode
+"nnoremap <S-Tab> <<
+" for insert mode
+"inoremap <S-Tab> <C-d>
+
+"#hi clear SpellBad
+"hi SpellBad cterm=underline
+" Set style for gVim
+"hi SpellBad gui=undercurl
+
+" insert one character (Control i)
+nnoremap <C-i> i_<Esc>r
+
+" indent line faster
+"vnoremap < <gv
+"vnoremap <S-Tab> <gv
+"vnoremap > >gv
+nmap > v><ESC>$
+nmap < v<<ESC>$
+
+nmap <leader>> v><ESC>$a<Space>
+nmap <leader>< v<<ESC>$a<Space>
+
+"autocmd FileType *.md
+" Spell Checking
+set spelllang=en
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+
+

@@ -20,4 +20,4 @@ tags
 # vim_runtime 
 .vim_runtime/.git
 .vim_runtime/LICENSE
-
+.vim_runtime

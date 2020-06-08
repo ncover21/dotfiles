@@ -13,3 +13,6 @@ tags
 .docker/.buildNodeID
 .docker/application-template
 
+#Embedded Git Repos
+.vim/bundle
+.vim/plugged

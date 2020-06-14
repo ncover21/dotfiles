@@ -4,7 +4,10 @@
 export PATH="$HOME/bin:$PATH";
 
 # ENV Variables
-export EDITOR=vim
+export EDITOR=nvim
+if type nvim > /dev/null 2>&1; then
+    alias vim='nvim'
+fi
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.

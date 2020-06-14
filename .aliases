@@ -28,7 +28,7 @@ alias dirsize='du -h -c |tail -1'
 alias update_covid='git --git-dir=/Users/noah/Projects/notebooks/datasets/COVID-19/.git pull'
 
 alias ..="cd .."
-alias gs="git status"
+#alias gs="git status"
 alias gp="git pull"
 alias gb="git branch"
 alias ga="git add ."
@@ -90,3 +90,21 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 alias c='clear'
+
+alias vim='nvim'
+alias v='nvim'
+
+
+alias n='nnn'
+
+# stocks
+alias stocks='ticker $(cat ~/.ticker.conf)'
+alias stock='ticker $(cat ~/.ticker.conf)'
+
+# make executable
+alias cx="chmod +x $1"
+
+#Ctag current directory
+alias tagdir="ctags -R -f ./.git/tags ."
+
+

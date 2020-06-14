@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+for F in /Users/noah/bin/*;
+do
+    echo "Making $F exectuable..."
+    chmod +x $F
+done
+

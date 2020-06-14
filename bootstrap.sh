@@ -2,7 +2,7 @@
 
 
 link(){
-	for file in $( ls -A | grep -vE '\.exclude*|\.git$|\.gitignore|.*.md|.DS_Store|bootstrap.sh' ) ; do
+	for file in $( ls -A | grep -vE '\.exclude*|\.git$|\.gitignore|.*.md|.DS_Store|bootstrap.sh|startup.sh' ) ; do
 		ln -sv "$PWD/$file" "$HOME"
 	done
 	echo "$PROMPT Symlinking complete"

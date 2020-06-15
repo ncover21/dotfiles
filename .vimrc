@@ -1,11 +1,11 @@
 
 
-" Vim_runtime stuff
-set runtimepath+=~/.vim_runtime
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+set runtimepath+=~/.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+source ~/.vim/basic.vim
+source ~/.vim/extended.vim
+source ~/.vim/filetypes.vim
 
 
 " Load vimrcs from ./.vim
@@ -16,7 +16,6 @@ source ~/.vim_runtime/vimrcs/extended.vim
 
 "source $HOME/.vim/basic.vim
 "source $HOME/.vim/filetypes.vim
-"source $HOME/.vim/plugins_config.vim
 "source $HOME/.vim/extended.vim
 
 :set number
@@ -46,7 +45,12 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
-
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasiser/vim-code-dark'
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'michaeljsmith/vim-indent-object'
 call plug#end()
 
 " vimwiki - Personal Wiki for Vim
@@ -66,9 +70,9 @@ set splitbelow
 set splitright
 
 " Window Creation Remapping
-map <C-d> <C-w>v
-map <leader>d <C-w>s
-map <C-q> <C-w>q
+" nnoremap <C-j> <C-w>v
+" nnoremap <C-k> <C-w>v
+" map <C-q> <C-w>q
 
 " coc plugin
 nmap <leader>gd <Plug><coc-definition)
@@ -124,8 +128,8 @@ nmap <leader>< v<<ESC>$a<Space>
 set spelllang=en
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.wiki setlocal spell
 
-map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeWinPos = "left"
 
 tnoremap <Esc> <C-\><C-n>
@@ -133,7 +137,27 @@ tnoremap <Esc> <C-\><C-n>
 " Nerd Tree change directory config
 let g:NERDTreeChDirMode = 2
 
-" movement
+"visual like movement
 nnoremap <buffer> k gk
 nnoremap <buffer> j gj
+
+"remap tab movements
+noremap <leader><Right> :tabn<cr>
+noremap <leader><Left> :tabp<cr>
+
+" Faster Movement up and down 
+noremap <S-j> <C-d>
+noremap <S-k> <C-u>
+
+
+"auto directory change depending on current file
+set autochdir
+autocmd BufEnter * silent! lcd %:p:h
+nnoremap <leader>cd :cd %:p:h<CR>
+
+" Colorscheme
+set background=dark
+"colorscheme dracula 
+"colorscheme peaksea
+colorscheme codedark
 

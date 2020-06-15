@@ -1,7 +1,7 @@
 #!/bin/bash
 
 all(){
-    for F in /Users/noah/bin/*;
+    for F in $1*;
     do
         echo "Making $F exectuable..."
         chmod +x $F
@@ -9,8 +9,9 @@ all(){
 }
 
 if [ $# -eq 0 ]; then
-    all;
+    echo "Provide a path. Exiting..."
+    exit 1
 else
-    chmod +x $1
+    all;
 fi
 

@@ -17,6 +17,8 @@ alias d="cd ~/Documents"
 alias p="cd ~/Projects"
 alias s="cd ~/School"
 alias h="cd ~"
+alias notes="cd ~/notes"
+alias notebooks="cd ~/notebooks"
 
 alias lc='wc -l'
 
@@ -91,10 +93,11 @@ alias path='echo -e ${PATH//:/\\n}'
 
 alias c='clear'
 
+#map vim/v to nvim
 alias vim='nvim'
 alias v='nvim'
 
-
+#file manager
 alias n='nnn'
 
 # stocks
@@ -106,5 +109,20 @@ alias cx="chmod +x $1"
 
 #Ctag current directory
 alias tagdir="ctags -R -f ./.git/tags ."
+
+# search aliases
+alias salias="alias | grep $1"
+
+#edit config files easier
+alias vrc="$EDITOR ~/.vimrc"
+alias zrc="$EDITOR ~/.zshrc"
+
+#easy access vimwiki
+alias vwiki="nvim -c ':VimwikiIndex'"
+alias vdi="nvim -c ':VimwikiDiaryIndex'"
+alias vdt="nvim -c ':VimwikiMakeDiaryNote'"
+
+#jekyll development
+alias jwatch="bundle exec jekyll serve --watch"
 
 

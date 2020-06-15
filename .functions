@@ -29,10 +29,28 @@ function o() {
 	fi;
 }
 
-activate_virtualenv() {
+act_env() {
     if [ -f env/bin/activate ]; then . env/bin/activate;
     elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
     elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
     elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
+    fi
+}
+
+git_full(){
+    if [ $# -eq 0 ]; then
+        echo "Specify Git message";
+        exit 1;
+    else
+        git add .;
+        git commit -m "$1";
+        echo "Push Commit (y/n)";
+        read REPLY;
+        echo "";
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            git push;
+        else
+            echo "Cancelling Push..."
+        fi
     fi
 }

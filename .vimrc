@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'davidhalter/jedi-vim'
 " For markdown stuff
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'preservim/nerdcommenter'

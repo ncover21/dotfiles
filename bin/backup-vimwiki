@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#to install: crontab -e
+#add entry: 0 */6 * * * /Users/noah/bin/backup-vimwiki
+
+GIT_DIR=/Users/noah/vimwiki
+
+git -C $GIT_DIR add --all
+git -C $GIT_DIR commit -m 'Backup' --allow-empty
+
+HOME=/Users/noah
+git -C $GIT_DIR push origin >/Users/noah/tmp_error 2>&1
+status=$?
+echo $status >> /Users/noah/tmp_log

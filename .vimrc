@@ -162,3 +162,8 @@ set background=dark
 "colorscheme peaksea
 colorscheme codedark
 
+
+" vimwiki stuff
+let g:vimwiki_list = [{'path': '~/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+

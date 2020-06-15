@@ -3,7 +3,7 @@
 #to install: crontab -e
 #add entry: 0 */6 * * * /Users/noah/bin/backup-vimwiki
 
-GIT_DIR=/Users/noah/vimwiki
+GIT_DIR=/Users/noah/notes
 
 git -C $GIT_DIR add --all
 git -C $GIT_DIR commit -m 'Backup' --allow-empty

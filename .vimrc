@@ -3,9 +3,9 @@
 set runtimepath+=~/.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-source ~/.vim/basic.vim
-source ~/.vim/extended.vim
-source ~/.vim/filetypes.vim
+source $HOME/.vim/basic.vim
+source $HOME/.vim/extended.vim
+source $HOME/.vim/filetypes.vim
 
 
 " Load vimrcs from ./.vim
@@ -163,7 +163,26 @@ set background=dark
 colorscheme codedark
 
 
+
+function! HandleURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+  echo s:uri
+  if s:uri != ""
+    silent exec "!open '".s:uri."'"
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+map <leader>u :call HandleURL()<cr>
+
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
+nnoremap <C-e> :NERDTreeToggle<CR>
+
+
 " vimwiki stuff
-let g:vimwiki_list = [{'path': '~/notes/',
+let g:vimwiki_list = [{'path': '$HOME/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 

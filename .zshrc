@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#maven stuff
+export M2_HOME=/Users/noah/apache-maven-3.6.3
+export PATH=$PATH:$M2_HOME/bin
 
 #add bin scripts
 if [ -d "$HOME/bin" ] ; then

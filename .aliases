@@ -16,6 +16,7 @@ alias b="cd .."
 alias d="cd ~/Documents"
 alias p="cd ~/Projects"
 alias s="cd ~/School"
+alias vm='cd ~/vmware'
 alias h="cd ~"
 alias notes="cd ~/notes"
 alias notebooks="cd ~/notebooks"

@@ -126,4 +126,11 @@ alias vdt="nvim -c ':VimwikiMakeDiaryNote'"
 #jekyll development
 alias jwatch="bundle exec jekyll serve --watch"
 
+#List Stuff
+alias list="cat ~/list.txt"
+alias tlist="tail ~/list.txt"
+alias elist="$EDITOR ~/list.txt"
+alias clearlist="echo '' > ~/list.txt"
+
+
 

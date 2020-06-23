@@ -35,6 +35,8 @@ alias ..="cd .."
 alias gp="git pull"
 alias gb="git branch"
 alias ga="git add ."
+alias glog="git log --graph --oneline --all"
+
 
 alias gphard='git fetch --all && git reset --hard origin/master'
 alias gc="git commit -m $1"

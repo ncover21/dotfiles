@@ -134,5 +134,4 @@ alias tlist="tail ~/list.txt"
 alias elist="$EDITOR ~/list.txt"
 alias clearlist="echo '' > ~/list.txt"
 
-
-
+alias t='top -u'

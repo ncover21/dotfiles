@@ -1,0 +1,1 @@
+kubectl -n dev-odin port-forward $1 27000:27017

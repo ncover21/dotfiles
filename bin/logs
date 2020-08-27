@@ -1,0 +1,1 @@
+kubectl -n dev-odin logs $1 

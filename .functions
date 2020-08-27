@@ -29,13 +29,13 @@ function o() {
 	fi;
 }
 
-act_env() {
-    if [ -f env/bin/activate ]; then . env/bin/activate;
-    elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
-    elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
-    elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
-    fi
-}
+#act_env() {
+#    if [ -f env/bin/activate ]; then . env/bin/activate;
+#    elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
+#    elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
+#    elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
+#    fi
+#}
 
 git_full(){
     if [ $# -eq 0 ]; then

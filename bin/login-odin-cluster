@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+set -v
+az login
+az aks get-credentials --resource-group odin-hcs --name odin-poc --subscription a9dc0838-a15b-448e-bd9a-0ca6261d32b5
+

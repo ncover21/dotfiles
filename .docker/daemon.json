@@ -1,4 +1,5 @@
 {
-  "experimental" : false,
-  "debug" : true
+    "experimental":false,
+    "debug":true,
+    "insecure-registries" : ["172.16.0.4:30309"]
 }

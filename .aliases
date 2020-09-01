@@ -137,3 +137,7 @@ alias t='top -u'
 
 alias nkube='kubectl --kubeconfig ~/.kube/ncover_cluster_config'
 alias okube='kubectl -n dev-odin'
+
+alias dockerclean="docker image prune --all -f && docker container prune -f"
+
+alias dkube="kubectl --kubeconfig /Users/noah/vmware/dev-odin/odin-k8s/kube-configs/devf.config"

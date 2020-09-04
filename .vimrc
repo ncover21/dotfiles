@@ -42,8 +42,11 @@ Plug 'davidhalter/jedi-vim'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'plasticboy/vim-markdown'
 Plug 'vimwiki/vimwiki'
+Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
+Plug 'Valloric/YouCompleteMe'
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'morhetz/gruvbox'
@@ -52,6 +55,8 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " vimwiki - Personal Wiki for Vim
@@ -114,12 +119,17 @@ nmap <c-x> [s1z=<c-o>
 " insert one character (Control i)
 nnoremap <C-i> i_<Esc>r
 
+"python
+"/usr/bin/python3
+let g:python_host_prog = '/usr/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
+
 " indent line faster
 "vnoremap < <gv
 "vnoremap <S-Tab> <gv
 "vnoremap > >gv
-nmap > v><ESC>$
-nmap < v<<ESC>$
+nmap > v><ESC>
+nmap < v<<ESC>
 
 nmap <leader>> v><ESC>$a<Space>
 nmap <leader>< v<<ESC>$a<Space>
@@ -146,9 +156,6 @@ nnoremap <buffer> j gj
 noremap <leader><Right> :tabn<cr>
 noremap <leader><Left> :tabp<cr>
 
-" Faster Movement up and down 
-noremap <S-j> <C-d>
-noremap <S-k> <C-u>
 
 
 "auto directory change depending on current file
@@ -186,3 +193,26 @@ nnoremap <C-e> :NERDTreeToggle<CR>
 let g:vimwiki_list = [{'path': '$HOME/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+nnoremap <leader>. :CtrlPTag<cr>
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+let g:SimpylFold_docstring_preview=1
+
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" nerd tree refresh
+nmap <Leader>r :NERDTreeRefreshRoot<cr>
+" Faster Movement up and down 
+noremap <S-j> <C-d>
+noremap <S-k> <C-u>
+
+
+
+let g:syntastic_python_checkers=['flake8']
+let g:pymode_python = 'python3'

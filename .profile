@@ -17,3 +17,5 @@ for file in ~/.{aliases,functions}; do
 done;
 unset file;
 
+
+export PATH="$HOME/.poetry/bin:$PATH"

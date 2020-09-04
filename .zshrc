@@ -93,3 +93,20 @@ export PATH="$HOME/.serverless/bin:$PATH"
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/Users/noah/miniconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/Users/noah/miniconda/etc/profile.d/conda.sh" ]; then
+#        . "/Users/noah/miniconda/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/Users/noah/miniconda/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+#export MONO_GAC_PREFIX="/usr/local"
+export FLASK_APP=app.py

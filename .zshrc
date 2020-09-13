@@ -5,6 +5,9 @@
 export M2_HOME=/Users/noah/apache-maven-3.6.3
 export PATH=$PATH:$M2_HOME/bin
 
+# Plaid ML export
+export KERAS_BACKEND="plaidml.keras.backend"
+
 #add bin scripts
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"

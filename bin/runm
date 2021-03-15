@@ -1,0 +1,10 @@
+#!/bin/bash 
+
+#Run Matlab files headless
+# simple script to run matlab script
+if [ $# -eq 0 ]
+  then
+    echo "please pass m script"
+fi
+
+/Applications/MATLAB_R2020b.app/bin/matlab -nodisplay -nosplash -nodesktop -r "run $1;"

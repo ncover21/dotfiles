@@ -1,3 +1,4 @@
+
 temp_dirs/undodir/*
 my_plugins/
 my_configs.vim
@@ -21,3 +22,6 @@ tags
 .vim_runtime/.git
 .vim_runtime/LICENSE
 .vim_runtime
+
+bin/vault
+bin/ngrok

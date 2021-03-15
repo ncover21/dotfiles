@@ -1,16 +1,21 @@
 #!/bin/bash
 
+#alias ls='ls -rthla'
+#alias ll='ls -rthla'
 alias ls='ls -rthlaG'
 alias ll='ls -rthlaG'
-
-
+#alias ls='nat -ug'
+# Movement Shortcuts
 alias cd..='cd ..'
-
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~="cd ~" # `cd` is probably faster to type though
 alias b="cd .."
+alias bb="cd ../.."
+
+# cp with rsync progress bar
+alias cp_p='rsync -aP'
 
 #shortcuts
 alias d="cd ~/Documents"
@@ -20,33 +25,38 @@ alias vm='cd ~/vmware'
 alias h="cd ~"
 alias notes="cd ~/notes"
 alias notebooks="cd ~/notebooks"
-alias dev='cd /Users/noah/vmware/dev-odin'
+alias dev='cd ~/Development'
+alias D='cd ~/Development'
+alias nas='cd /Volumes/T_Drive'
+alias projects="cd ~/Projects"
+alias school="cd ~/School"
 
+# Line Count
 alias lc='wc -l'
-
-
+# Directory Size
 alias dirsize='du -h -c |tail -1'
 
 alias update_covid='git --git-dir=/Users/noah/Projects/notebooks/datasets/COVID-19/.git pull'
 
-alias ..="cd .."
+# Git shortcuts
 #alias gs="git status"
 alias gp="git pull"
 alias gb="git branch"
 alias ga="git add ."
 alias glog="git log --graph --oneline --all"
-
-
 alias gphard='git fetch --all && git reset --hard origin/master'
 alias gc="git commit -m $1"
+alias c_repo="gh repo create $1 --private"
 
-alias projects="cd ~/Projects"
-alias school="cd ~/School"
+# Start jupyter notebook in default location
+alias jp="jupyter notebook"
 
-alias jp="cd ~/notebooks && jupyter notebook"
-
+# Virtual ENV Aliases
+# Generate env
 alias gen_env='virtualenv env -p python3'
+# Activate Env
 alias a_env='. env/bin/activate'
+# Deactive Virtual ENV
 alias d='deactivate'
 
 alias sz='source ~/.zshrc'
@@ -103,8 +113,8 @@ alias v='nvim'
 alias n='nnn'
 
 # stocks
-alias stocks='ticker $(cat ~/.ticker.conf)'
-alias stock='ticker $(cat ~/.ticker.conf)'
+#alias stocks='ticker $(cat ~/.ticker.conf)'
+#alias stock='ticker $(cat ~/.ticker.conf)'
 
 # make executable
 alias cx="chmod +x $1"
@@ -133,7 +143,8 @@ alias tlist="tail ~/list.txt"
 alias elist="$EDITOR ~/list.txt"
 alias clearlist="echo '' > ~/list.txt"
 
-alias t='top -u'
+alias t='htop'
+#alias top='htop'
 
 alias nkube='kubectl --kubeconfig ~/.kube/ncover_cluster_config'
 alias okube='kubectl -n dev-odin'
@@ -141,3 +152,32 @@ alias okube='kubectl -n dev-odin'
 alias dockerclean="docker image prune --all -f && docker container prune -f"
 
 alias dkube="kubectl --kubeconfig /Users/noah/vmware/dev-odin/odin-k8s/kube-configs/devf.config"
+
+# Download Url and All sub directories, ignore auto generated files
+alias dwnld_url="wget -r -np -R 'index.html*' $1" 
+
+#Matlab CLI
+alias matlab='/Applications/MATLAB_R2020b.app/bin/matlab -nodesktop -nosplash $*'
+
+#Task Stuff
+alias tl='task list'
+alias ta='task add' 
+alias tm='task modify'
+alias trm='task rm'
+alias tn='task next'
+alias td='task done'
+
+#alias l='ls'
+
+alias tmuxkill='tmux kill-server'
+alias tmuxa="tmux attach-session -t $1"
+
+alias preview="open -a Preview $1"
+
+alias tless="tail +F $1"
+
+alias a=". env/bin/activate"
+alias fvim="grep -rnw ~/notes/vim.txt -e $1"
+alias f="open ."
+
+

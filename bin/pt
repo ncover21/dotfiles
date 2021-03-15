@@ -1,0 +1,36 @@
+#!/Users/noah/.pyenv/shims/python
+
+from tqdm import tqdm
+import pync, datetime, time, sys, os
+import argparse, re
+from pync import Notifier
+
+TIME_REGEX = r'^((?:[01]\d|2[0-3]):[0-5]\d:[0-5]\d$)'
+
+def main():
+    parser = argparse.ArgumentParser(description='Progress Timer for your tasks')
+    parser.add_argument("-t", "--time", type=str,
+                        help="Duration of timer (format: HH:MM:SS)")
+    args = parser.parse_args()
+
+    if args.time == '' or args.time == None or len(re.findall(TIME_REGEX, args.time)) <= 0:
+        raise Exception("Not valid time formatting, please match:  HH:MM:SS")
+        exit()
+
+    t = datetime.datetime.strptime(args.time, '%H:%M:%S')
+    seconds = (t.hour * 60 + t.minute) * 60 + t.second
+    start_t = datetime.datetime.now().time()
+
+    for i in tqdm(range(seconds)):
+        time.sleep(1)
+
+    Notifier.notify('Timer Completed', title='Progress Timer')
+    print("Timer Completed")
+
+
+    Notifier.remove(os.getpid())
+
+    Notifier.list(os.getpid())
+
+if __name__ == "__main__":
+    main()

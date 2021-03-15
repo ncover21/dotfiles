@@ -1,5 +1,14 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 #maven stuff
 export M2_HOME=/Users/noah/apache-maven-3.6.3
@@ -56,7 +65,6 @@ plugins=(
     osx
     python
     zsh-autosuggestions
-    vi-mode
     docker-compose
 )
 
@@ -113,3 +121,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # <<< conda initialize <<<
 #export MONO_GAC_PREFIX="/usr/local"
 export FLASK_APP=app.py
+PATH=$(pyenv root)/shims:$PATH
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

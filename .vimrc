@@ -54,6 +54,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tomasiser/vim-code-dark'
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -204,6 +205,7 @@ let g:SimpylFold_docstring_preview=1
 
 
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_python_binary_path ='/Users/noah/.pyenv/shims/python'
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " nerd tree refresh
@@ -212,7 +214,37 @@ nmap <Leader>r :NERDTreeRefreshRoot<cr>
 noremap <S-j> <C-d>
 noremap <S-k> <C-u>
 
-
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 let g:syntastic_python_checkers=['flake8']
 let g:pymode_python = 'python3'
+
+
+set mouse=a
+
+
+function! ToggleMouse()
+    " check if mouse is enabled
+    if &mouse == 'a'
+        " disable mouse
+        set mouse=
+    else
+        " enable mouse everywhere
+        set mouse=a
+    endif
+endfunc
+
+
+" Jump on character left and append in insert mode (start from INSERT mode)
+inoremap <S-Tab> <esc>la
+
+" moving lines around
+nnoremap ,<Up>   :<C-u>silent! move-2<CR>==
+nnoremap ,<Down> :<C-u>silent! move+<CR>==
+xnoremap ,<Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap ,<Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
+
+" double enter
+
+
+

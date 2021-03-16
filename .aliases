@@ -21,6 +21,7 @@ alias cp_p='rsync -aP'
 alias d="cd ~/Documents"
 alias p="cd ~/Projects"
 alias s="cd ~/School"
+alias scripts="cd ~/scripts"
 alias vm='cd ~/vmware'
 alias h="cd ~"
 alias notes="cd ~/notes"
@@ -182,4 +183,9 @@ alias f="open ."
 
 alias pb="$EDITOR ~/notes/PasteBin.md"
 
+
+# Automate the Running of Scripts from Anywhere while saving current location
 alias mctimer="pushd ~/scripts/mc-universal-in-game-timer && python main.py; popd"
+alias sterm="pushd ~/scripts/GamestonkTerminal && ./dev.sh; popd"
+
+

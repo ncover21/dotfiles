@@ -180,4 +180,6 @@ alias a=". env/bin/activate"
 alias fvim="grep -rnw ~/notes/vim.txt -e $1"
 alias f="open ."
 
+alias pb="$EDITOR ~/notes/PasteBin.md"
 
+alias mctimer="pushd ~/scripts/mc-universal-in-game-timer && python main.py; popd"

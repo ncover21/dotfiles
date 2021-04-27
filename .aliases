@@ -188,4 +188,6 @@ alias pb="$EDITOR ~/notes/PasteBin.md"
 alias mctimer="pushd ~/scripts/mc-universal-in-game-timer && python main.py; popd"
 alias sterm="pushd ~/scripts/GamestonkTerminal && ./dev.sh; popd"
 
+alias cat="bat"
+
 

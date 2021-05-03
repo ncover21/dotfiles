@@ -3,6 +3,13 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+#Spotify Creds
+export SPOTIPY_CLIENT_ID='3788898cebaf4f909add449222d79291';
+export SPOTIPY_CLIENT_SECRET='2fc1134693e34fab932447e5018cd233';
+
+export SPOTIFY_CLIENT_ID='3788898cebaf4f909add449222d79291';
+export SPOTIFY_CLIENT_SECRET='2fc1134693e34fab932447e5018cd233';
+
 # ENV Variables
 export EDITOR=nvim
 if type nvim > /dev/null 2>&1; then
